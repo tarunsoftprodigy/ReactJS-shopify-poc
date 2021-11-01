@@ -5,9 +5,146 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+#root {
+  max-width: 1120px;
+  margin: auto;
+}
+
+.navbar{ 
+  display: flex;
+  min-height: 100px;
+  max-height: 125px;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 50px;
+}
+
+.prdct-list {
+  max-width: 1120px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  align-items: center;
+}
+
+.prdct-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.prdct-card p, .prdct-card h3 {
+  color: #444;
+}
+
+.prdct-card img {
+  margin: auto;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.prdct-detail {
+  display: grid;
+  grid-template-columns: 40% auto;
+  grid-gap: 50px;
+  max-width: 1120px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.prdct-detail img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.allprods {
+  display: block;
+  max-width: 300px;
+  margin: 50px auto;
+  background: #333;
+  text-align: center;
+}
+
+.allprods a {
+  padding: 20px;
+  color: #fff;
+}
+
+#sidebar {
+  display: none;
+  transition: 200ms linear;
+  max-width: 450px;
+  width: 100%;
+  margin-left: auto;
+  box-shadow: 1px 1px 10px rgb(0 0 0 / 10%);
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  right: 0;
+  padding: 50px 25px;
+  z-index: 999;
+  background: #f1f1f1;
+}
+
+.close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-products {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.cart-products > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 40px 0;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+
+.cart-products img {
+  max-width: 100%;
+  object-fit: cover;
+  max-height: 125px;
+}
+
+.cart-products .inc-dec button {
+  margin: 0 8px;
+}
+
+.cart-products .inc-dec span {
+  font-weight: bold;
+}
+
+.checkout-btn {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  max-width: 25%;
+  margin: auto;
+  margin-top: 40px;
+  text-align: center;
 }

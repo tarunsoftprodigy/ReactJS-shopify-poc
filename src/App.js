@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+import ShopProvider from './context/shopContext'
 
-function App() {
+import HomePage from './pages/HomePage'
+import ProductPage from './pages/ProductPage'
+import AllProduct from './pages/AllProducts'
+import CollectionPage from './pages/CollectionPage'
+import ThankYou from './pages/ThankYou';
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ShopProvider>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route> 
+            <Route  path="/products" exact>
+              <AllProduct />
+            </Route>
+            <Route path="/product/:id" exact>
+              <ProductPage />
+            </Route>
+            <Route path="/collection/:id" exact>
+              <CollectionPage />
+            </Route>
+            <Route path="/thank-you" exact>
+                <ThankYou />
+            </Route>
+          </Switch>
+        </Router>
+    </ShopProvider>
   );
 }
 
